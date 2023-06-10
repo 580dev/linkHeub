@@ -13,7 +13,6 @@ export class LoginComponent {
   constructor(private router: Router){}
 
   login() {
-    // Ajoutez ici le code pour gérer la connexion
     console.log('email:', this.email);
     console.log('Mot de passe:', this.password);
     if(this.email === "admin@linkHub.fr" && this.password === "admin") {
