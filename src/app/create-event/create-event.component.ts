@@ -13,6 +13,7 @@ export class CreateEventComponent implements OnInit{
   imageDataUrl: any;
 
   event : EventModel = new EventModel();
+  notif: boolean = false;
 
   ngOnInit(): void {
     this.readImage()
@@ -41,5 +42,6 @@ export class CreateEventComponent implements OnInit{
     localStorage.setItem('event', JSON.stringify(this.event));
     console.log(localStorage.getItem('event'))
     this.event = new EventModel();
+    this.notif=true;
   }
 }
