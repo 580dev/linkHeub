@@ -3,7 +3,7 @@
     <form (ngSubmit)="login()">
       <input type="text" placeholder="Email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
       <input type="password" placeholder="Mot de passe" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
-      <button type="submit">Se connecter</button>
+      <button type="submit" [disabled]="!email || !password">Se connecter</button>
     </form>
 </div>
   
