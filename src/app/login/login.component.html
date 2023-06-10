@@ -1,0 +1,9 @@
+<div class="login-container">
+    <h1>Connexion</h1>
+    <form (ngSubmit)="login()">
+      <input type="text" placeholder="Email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+      <input type="password" placeholder="Mot de passe" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+      <button type="submit">Se connecter</button>
+    </form>
+</div>
+  
