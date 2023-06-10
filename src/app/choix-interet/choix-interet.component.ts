@@ -28,6 +28,8 @@ export class ChoixInteretComponent {
   }
 
   saveInteret() {
+    localStorage.setItem('interests', JSON.stringify(this.selectedOptions));
+    console.log(localStorage.getItem('interests'));
     this.router.navigate(['student/create-event'])
   }
 }

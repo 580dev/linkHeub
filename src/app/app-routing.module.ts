@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { ChoixInteretComponent } from './choix-interet/choix-interet.component';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { ListInteretComponent } from './list-interet/list-interet.component';
+import {ListEventComponent} from "./list-event/list-event.component";
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
     path: 'admin', children: [
       {path: 'list-interet', component: ListInteretComponent},
       {path: 'create-event', component: CreateEventComponent},
+      {path: 'list-event', component: ListEventComponent},
     ]
   }
 ];

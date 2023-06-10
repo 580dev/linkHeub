@@ -1,10 +1,10 @@
 <div class="login-container">
     <h1>Créer un évènement</h1>
     <form>
-      <input type="text" placeholder="Titre">
-      <input type="text" placeholder="Description">
+      <input type="text" placeholder="Titre" [value]="event.title">
+      <input type="text" placeholder="Description" [value]="event.description">
       <div class="form-group">
-        <select id="option" name="option" [(ngModel)]="selectedOption">
+        <select id="option" name="option" [(ngModel)]="selectedOption" [value]="event.interest">
           <option value="">Sélectionnez un centre d'interet</option>
           <option *ngFor="let option of availableOptions" [value]="option">{{ option }}</option>
         </select>
@@ -15,7 +15,6 @@
         <label class="custom-file-label" for="imageInput">Choisir une image</label>
       </div>
 
-      <button type="submit">Save</button>
+      <button (click)="saveEvent()">Save</button>
     </form>
 </div>
-  

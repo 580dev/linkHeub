@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {EventModel} from "../model/event.model";
 
 @Component({
   selector: 'app-create-event',
@@ -9,7 +10,9 @@ export class CreateEventComponent implements OnInit{
   selectedOption: string = '';
   selectedOptions: string[] = [];
   availableOptions: string[] = ['Option 1', 'Option 2', 'Option 3', 'Option 4'];
-  imageDataUrl: any
+  imageDataUrl: any;
+
+  event : EventModel = new EventModel();
 
   ngOnInit(): void {
     this.readImage()
@@ -17,12 +20,13 @@ export class CreateEventComponent implements OnInit{
 
   onFileSelected(event: any) {
     const file: File = event.target.files[0];
-    
+
     if (file) {
       const reader = new FileReader();
       reader.onload = (e) => {
         this.imageDataUrl = reader.result as string;
-        localStorage.setItem('image', this.imageDataUrl);
+        this.event.banner =this.imageDataUrl;
+
       };
       reader.readAsDataURL(file);
     }
@@ -31,6 +35,11 @@ export class CreateEventComponent implements OnInit{
   readImage() {
     this.imageDataUrl = localStorage.getItem('image');
   }
-  
 
+
+  saveEvent() {
+    localStorage.setItem('event', JSON.stringify(this.event));
+    console.log(localStorage.getItem('event'))
+    this.event = new EventModel();
+  }
 }
