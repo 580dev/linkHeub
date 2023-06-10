@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-choix-interet',
@@ -9,6 +10,8 @@ export class ChoixInteretComponent {
   selectedOption: string = '';
   selectedOptions: string[] = [];
   availableOptions: string[] = ['Option 1', 'Option 2', 'Option 3', 'Option 4'];
+
+  constructor(private router: Router) {}
 
   onSubmit() {
     if (this.selectedOption) {
@@ -22,5 +25,9 @@ export class ChoixInteretComponent {
     if (index !== -1) {
       this.selectedOptions.splice(index, 1);
     }
+  }
+
+  saveInteret() {
+    this.router.navigate(['create-event'])
   }
 }

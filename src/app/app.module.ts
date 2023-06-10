@@ -9,12 +9,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ChoixInteretComponent } from './choix-interet/choix-interet.component';
+import { CreateEventComponent } from './create-event/create-event.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ChoixInteretComponent
+    ChoixInteretComponent,
+    CreateEventComponent
   ],
   imports: [
     BrowserModule,
