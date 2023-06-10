@@ -16,7 +16,13 @@ export class LoginComponent {
     // Ajoutez ici le code pour gérer la connexion
     console.log('email:', this.email);
     console.log('Mot de passe:', this.password);
-
-    this.router.navigate(['choix-interet'])
+    if(this.email === "admin@linkHub.fr" && this.password === "admin") {
+      this.router.navigate(['admin/list-interet'])
+    }
+    
+    if(this.email === "student@linkHub.fr" && this.password === "student") {
+      this.router.navigate(['student/choix-interet'])
+    }
+    
   }
 }

@@ -1,0 +1,47 @@
+.container {
+    margin-inline: 20px;
+}
+.element-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .element-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .circle-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    margin-right: 10px;
+  }
+  
+  .circle-icon i {
+    color: #777;
+  }
+  
+  .element-title {
+    flex: 1;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .number-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ff5f5f;
+    color: #fff;
+    font-size: 12px;
+  }
+  

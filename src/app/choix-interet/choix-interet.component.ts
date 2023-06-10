@@ -28,6 +28,6 @@ export class ChoixInteretComponent {
   }
 
   saveInteret() {
-    this.router.navigate(['create-event'])
+    this.router.navigate(['student/create-event'])
   }
 }

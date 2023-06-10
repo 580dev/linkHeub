@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ChoixInteretComponent } from './choix-interet/choix-interet.component';
 import { CreateEventComponent } from './create-event/create-event.component';
+import { ListInteretComponent } from './list-interet/list-interet.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ChoixInteretComponent,
-    CreateEventComponent
+    CreateEventComponent,
+    ListInteretComponent
   ],
   imports: [
     BrowserModule,
