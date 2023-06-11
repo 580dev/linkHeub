@@ -7,19 +7,19 @@
 <div class="login-container">
     <h1>Créer un évènement</h1>
     <div>
-      <input type="text" placeholder="Titre" [value]="event.titre">
-      <input type="text" placeholder="Description" [value]="event.description">
+      <input type="text" placeholder="Titre" [value]="title" [(ngModel)]="title">
+      <input type="text" placeholder="Description" [value]="description" [(ngModel)]="description">
       <div class="form-group">
         <select id="option" name="option" [(ngModel)]="selectedOption">
           <option value="">Sélectionnez un centre d'interet</option>
-          <option *ngFor="let option of availableOptions" [value]="option">{{ option.libelle }}</option>
+          <option *ngFor="let option of availableOptions" [value]="option.id">{{ option.libelle }}</option>
         </select>
       </div>
 
-      <div class="custom-file">
+      <!-- <div class="custom-file">
         <input type="file" class="custom-file-input" id="imageInput" (change)="onFileSelected($event)">
         <label class="custom-file-label" for="imageInput">Choisir une image</label>
-      </div>
+      </div> -->
       <button (click)="saveEvent()">Save</button>
 
     </div>

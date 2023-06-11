@@ -13,6 +13,7 @@ const routes: Routes = [
     path: 'student', children: [
       {path: 'choix-interet', component: ChoixInteretComponent},
       {path: 'create-event', component: CreateEventComponent},
+      // {path: 'list-event', component: ListEventComponent},
     ]
   },
   {

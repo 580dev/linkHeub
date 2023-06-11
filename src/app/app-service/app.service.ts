@@ -19,10 +19,9 @@ export interface User {
 }
 
 export interface EventModel {
-  id: number,
   titre: string,
   description: string,
-  date: string,
+  date?: string,
   image?: string,
   interet: Interet
 }
@@ -57,6 +56,7 @@ export class AppService {
 
   getEvents(): EventModel[]{
     const events = localStorage.getItem('events');
+    console.log(events)
     if(events) {
       return JSON.parse(events)
     } else {
@@ -67,7 +67,7 @@ export class AppService {
   addEvent(event : EventModel){
     let events = JSON.parse(localStorage.getItem('events')!);
     events.push(event)
-    localStorage.setItem('events', events)
+    localStorage.setItem('events', JSON.stringify(events))
   }
 
 
@@ -80,11 +80,11 @@ export class AppService {
     }
   }
 
-  addInteret(event : EventModel){
-    let interets = JSON.parse(localStorage.getItem('interets')!);
-    interets.push(event)
-    localStorage.setItem('event', interets)
-  }
+  // addInteret(event : EventModel){
+  //   let interets = JSON.parse(localStorage.getItem('interets')!);
+  //   interets.push(event)
+  //   localStorage.setItem('event', interets)
+  // }
 
   saveUsers() {
     const users: User[] = [

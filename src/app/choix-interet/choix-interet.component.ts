@@ -28,6 +28,10 @@ export class ChoixInteretComponent {
       this.selectedOptions.splice(index, 1);
   }
 
+  goTocreateEvent() {
+    this.router.navigate(['student/create-event'])
+  }
+
   saveInteret() {
     const user = JSON.parse(localStorage.getItem('currentUser')!)
     this.appService.addInteretsToUser(this.selectedOptions, user.id)
