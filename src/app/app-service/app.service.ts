@@ -32,6 +32,25 @@ export interface Event {
 })
 export class AppService {
 
+  centreInterets : Interet[] = [
+    {
+      id: 1,
+      libelle: 'FOOTBALL'
+    },
+    {
+      id: 2,
+      libelle: 'DANSE'
+    },
+    {
+      id: 3,
+      libelle: 'RANDONE'
+    },
+    {
+      id: 4,
+      libelle: 'MMA'
+    },
+  ]
+
   constructor() { }
 
   saveUsers() {
@@ -86,6 +105,11 @@ export class AppService {
   findUser(id: number) {
     const users = this.getUsers()
     return users.find(user => user.id === id)
+  }
+
+  findUserByEmail(email: string) {
+    const users = this.getUsers()
+    return users.find(user => user.email === email)
   }
 
   putUser(user: User) {

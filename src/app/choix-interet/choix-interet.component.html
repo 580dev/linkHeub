@@ -3,9 +3,9 @@
     <form (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="option">Interet :</label>
-        <select id="option" name="option" [(ngModel)]="selectedOption">
+        <select id="option" name="option" [(ngModel)]="selectedOption" >
           <option value="">Sélectionnez une option</option>
-          <option *ngFor="let option of availableOptions" [value]="option">{{ option }}</option>
+          <option *ngFor="let option of availableOptions" [value]="option.id">{{ option.libelle }}</option>
         </select>
       </div>
       <button class="add-interet" type="submit" [disabled]="!selectedOption">Ajouter</button>
@@ -14,9 +14,9 @@
     <div class="selected-options">
       <h4>Liste des intérets sélectionnés :</h4>
       <ul>
-        <li *ngFor="let option of selectedOptions">
-          {{ option }}
-          <button class="delete-interet" (click)="removeOption(option)">Supprimer</button>
+        <li *ngFor="let option of selectedOptions; let index = index">
+          {{ option?.libelle }}
+          <button class="delete-interet" (click)="removeOption(index)">Supprimer</button>
         </li>
       </ul>
     </div>
