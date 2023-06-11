@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {EventModel} from "../model/event.model";
+import {AppService, EventModel, Interet} from "../app-service/app.service";
 
 @Component({
   selector: 'app-create-event',
@@ -7,12 +7,24 @@ import {EventModel} from "../model/event.model";
   styleUrls: ['./create-event.component.css']
 })
 export class CreateEventComponent implements OnInit{
-  selectedOption: string = '';
-  selectedOptions: string[] = [];
-  availableOptions: string[] = ['Option 1', 'Option 2', 'Option 3', 'Option 4'];
+
+  constructor(private appService : AppService) {
+  }
+  selectedOption!: Interet;
+  selectedOptions: Interet[] = [];
+  availableOptions: Interet[] = this.appService.getInterets();
   imageDataUrl: any;
 
-  event : EventModel = new EventModel();
+  event : EventModel = {
+    id: 1,
+    titre: "",
+    description: "",
+    date: "",
+    interet: {
+      id: 1,
+      libelle: "Randonnée"
+    }
+  }
   notif: boolean = false;
 
   ngOnInit(): void {
@@ -26,7 +38,7 @@ export class CreateEventComponent implements OnInit{
       const reader = new FileReader();
       reader.onload = (e) => {
         this.imageDataUrl = reader.result as string;
-        this.event.banner =this.imageDataUrl;
+        this.event.image =this.imageDataUrl;
 
       };
       reader.readAsDataURL(file);
@@ -39,9 +51,8 @@ export class CreateEventComponent implements OnInit{
 
 
   saveEvent() {
-    localStorage.setItem('event', JSON.stringify(this.event));
-    console.log(localStorage.getItem('event'))
-    this.event = new EventModel();
+    this.event.interet = this.selectedOption;
+    this.appService.addEvent(this.event)
     this.notif=true;
   }
 }

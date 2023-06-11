@@ -18,12 +18,13 @@ export interface User {
   interet: Interet[]
 }
 
-export interface Event {
+export interface EventModel {
   id: number,
   titre: string,
   description: string,
   date: string,
-  image?: string
+  image?: string,
+  interet: Interet
 }
 
 
@@ -33,6 +34,38 @@ export interface Event {
 export class AppService {
 
   constructor() { }
+
+
+  getEvents(): EventModel[]{
+    const events = localStorage.getItem('events');
+    if(events) {
+      return JSON.parse(events)
+    } else {
+      return [] as EventModel[]
+    }
+  }
+
+  addEvent(event : EventModel){
+    let events = JSON.parse(localStorage.getItem('events')!);
+    events.push(event)
+    localStorage.setItem('events', events)
+  }
+
+
+  getInterets(): Interet[]{
+    const interets = localStorage.getItem('interets');
+    if(interets) {
+      return JSON.parse(interets)
+    } else {
+      return [] as Interet[]
+    }
+  }
+
+  addInteret(event : EventModel){
+    let interets = JSON.parse(localStorage.getItem('interets')!);
+    interets.push(event)
+    localStorage.setItem('event', interets)
+  }
 
   saveUsers() {
     const users: User[] = [

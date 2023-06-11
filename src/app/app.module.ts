@@ -12,6 +12,7 @@ import { ChoixInteretComponent } from './choix-interet/choix-interet.component';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { ListInteretComponent } from './list-interet/list-interet.component';
 import { ListEventComponent } from './list-event/list-event.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ListEventComponent } from './list-event/list-event.component';
     ChoixInteretComponent,
     CreateEventComponent,
     ListInteretComponent,
-    ListEventComponent
+    ListEventComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

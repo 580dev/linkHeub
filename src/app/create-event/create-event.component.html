@@ -7,12 +7,12 @@
 <div class="login-container">
     <h1>Créer un évènement</h1>
     <div>
-      <input type="text" placeholder="Titre" [value]="event.title">
+      <input type="text" placeholder="Titre" [value]="event.titre">
       <input type="text" placeholder="Description" [value]="event.description">
       <div class="form-group">
-        <select id="option" name="option" [(ngModel)]="selectedOption" [value]="event.interest">
+        <select id="option" name="option" [(ngModel)]="selectedOption">
           <option value="">Sélectionnez un centre d'interet</option>
-          <option *ngFor="let option of availableOptions" [value]="option">{{ option }}</option>
+          <option *ngFor="let option of availableOptions" [value]="option">{{ option.libelle }}</option>
         </select>
       </div>
 
